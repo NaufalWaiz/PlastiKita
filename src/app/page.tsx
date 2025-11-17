@@ -74,6 +74,12 @@ export default function Home() {
               >
                 Unduh paket edukasi
               </a>
+              <Link
+                href="/eksplorasi-3d"
+                className="flex items-center justify-center rounded-full border border-sky-400/40 bg-sky-400/5 px-6 py-3 text-base font-semibold text-sky-100 transition hover:border-sky-300 hover:text-white"
+              >
+                Eksplorasi aset 3D
+              </Link>
             </div>
             <div className="grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
               <p className="text-sm uppercase tracking-[0.4em] text-white/60">
