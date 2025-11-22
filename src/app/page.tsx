@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { PlasticsSceneLoader } from "@/components/PlasticsSceneLoader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 
 const stats = [
   { label: "Botol plastik dialihkan", value: "1,2 Juta" },
@@ -54,8 +57,11 @@ export default function Home() {
           menghasilkan lebih dari 7,8 juta ton sampah plastik setiap tahun, dan
           sekitar 3,2 juta ton di antaranya berakhir di laut.
         </p>
-        <div className="flex flex-row">
-            <div className="rounded-full bg-[#88A825] w-11 h-11"></div>
+        <div className="flex flex-row items-center gap-5">
+            <div className="rounded-full bg-[#88A825] w-11 h-11 flex justify-center items-center shadow-xl/30">
+                <FontAwesomeIcon icon={faAngleRight} className="text-white"/>
+            </div>
+            <h1 className="text-[#88A825] font-semibold text-[20px]">Jelajahi Sekarang</h1>
         </div>
       </section>
     </div>
