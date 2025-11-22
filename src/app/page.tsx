@@ -44,12 +44,12 @@ const programs = [
 export default function Home() {
   return (
     <div>
-      <section className="min-h-screen bg-white text-black px-12 pt-20 font-poppins">
+      <section className="h-screen bg-white text-black px-12 pt-36 font-poppins">
         <h1 className="font-semibold text-[32px] w-7/12 mb-6">
-          Bagaimana Kondisi Polusi Plastik yang Kian Memprihatinkan di{" "}
+          Bagaimana Kondisi Polusi Plastik yang Kian Memprihatinkan di {" "}
           <span className="bg-[#F89B11] inline-block text-white">Indonesia</span>?
         </h1>
-        <p className="opacity-50 w-8/12 text-lg mb-5">
+        <p className="opacity-50 w-7/12 text-lg mb-5">
           Polusi plastik adalah masalah lingkungan yang semakin mengkhawatirkan
           di Indonesia. Sampah plastik yang tidak terkelola dengan baik
           mencemari tanah, sungai, dan laut, serta membahayakan ekosistem dan
@@ -63,6 +63,12 @@ export default function Home() {
             </div>
             <h1 className="text-[#88A825] font-semibold text-[20px]">Jelajahi Sekarang</h1>
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" className="absolute -bottom-1 left-0 w-full" preserveAspectRatio="none" viewBox="0 0 1440 320">
+          <path fill="#2F4F12" fill-opacity="1" d="M0 240 C180 255, 350 270, 550 270 C780 270, 920 245, 1160 175 C1280 135, 1370 125, 1440 145 L1440 320 L0 320 Z"></path>
+        </svg>
+      </section>
+      <section className="bg-linear-to-b from-[#2F4F12] to-[#66863E] min-h-screen">
+    
       </section>
     </div>
   );

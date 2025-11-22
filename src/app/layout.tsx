@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} bg-white antialiased`}>
-        <div className="w-full bg-white font-medium text-[21px] gap-14 text-black py-5 flex flex-row justify-end px-32 font-poppins">
+        <div className="w-full absolute bg-white font-medium text-[21px] gap-14 text-black py-5 flex flex-row justify-end px-32 font-poppins">
           <Link href={'#'}>Beranda</Link>
           <Link href={'#'}>Tentang</Link>
           <Link href={'#'}>Artikel</Link>
