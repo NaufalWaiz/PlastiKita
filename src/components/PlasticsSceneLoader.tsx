@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, JSX, ReactNode } from "react";
 import { Component, useEffect, useRef, useState } from "react";
 
 type PlasticsSceneComponent = (props: {
