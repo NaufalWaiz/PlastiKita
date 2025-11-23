@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import Navbar from "./components/Navbar";
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -47,12 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} bg-white antialiased`}>
-        <div className="w-full absolute bg-white font-medium text-[21px] gap-14 text-black py-5 flex flex-row justify-end px-32 font-poppins">
-          <Link href={'#'}>Beranda</Link>
-          <Link href={'#'}>Tentang</Link>
-          <Link href={'#'}>Artikel</Link>
-          <Link href={'#'}>Quiz</Link>
-        </div>
+        <Navbar />
         {children}
       </body>
     </html>

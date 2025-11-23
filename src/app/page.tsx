@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <>
     {/** First Section */}
-      <section className="min-h-screen bg-none text-black px-12 pt-36 font-poppins" id="beranda">
-        <h1 className="font-semibold text-[32px] w-7/12 mb-6">
+      <section className="min-h-screen bg-none text-black pt-14 px-3 sm:px-12 sm:pt-36 font-poppins" id="beranda">
+        <h1 className="font-semibold text-[28px] sm:text-[32px] w-11/12 sm:w-7/12 mb-6">
           Bagaimana Kondisi Polusi Plastik yang Kian Memprihatinkan di {" "}
           <span className="bg-[#F89B11] inline-block text-white">Indonesia</span>?
         </h1>
-          <p className="opacity-50 w-7/12 text-lg mb-5 leading-relaxed">
+          <p className="opacity-50 w-full text-[15px] sm:text-lg mb-5 leading-relaxed">
             Polusi plastik adalah masalah lingkungan yang semakin mengkhawatirkan
             di Indonesia. Sampah plastik yang tidak terkelola dengan baik
             mencemari tanah, sungai, dan laut, serta membahayakan ekosistem dan
