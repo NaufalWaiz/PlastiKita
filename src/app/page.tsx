@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Trash from "./components/Trash";
+import CTAButton from "./components/CTAButton";
+import { text } from "stream/consumers";
 
 export default function Home() {
   return (
@@ -20,13 +20,7 @@ export default function Home() {
               menghasilkan lebih dari 7,8 juta ton sampah plastik setiap tahun, dan
               sekitar 3,2 juta ton di antaranya berakhir di laut.
             </p>
-          <div className="group w-fit flex flex-row items-center gap-5 transform transition bg-transparent hover:bg-[#88A825] rounded-full cursor-pointer">
-              <div className="flex bg-[#88A825] w-10 h-10 justify-center items-center rounded-full">
-                  <FontAwesomeIcon icon={faAngleRight} className="text-white pointer-events-none absolute transition-all duration-300 group-hover:-translate-x-2 group-hover:opacity-0"/>
-                  <FontAwesomeIcon icon={faArrowRight} className="text-white pointer-events-none absolute transition-all duration-300 opacity-0 group-hover:opacity-100 group-active:translate-x-[190px] group-hover:translate-x-1"/>
-              </div>
-              <span className="group-hover:text-white group-active:-translate-x-full group-active:opacity-0 text-[#88A825] font-semibold text-[18px] transition mr-5">Jelajahi Sekarang</span>
-          </div>
+            <CTAButton section="#section-2" text="Jelajahi Sekarang"/>
         </div>
         <div className="w-3/12">
           <Trash />
@@ -37,8 +31,8 @@ export default function Home() {
       </section>
 
       {/** Second Section */}
-      <section className="bg-linear-to-b from-[#2F4F12] to-[#66863E] min-h-screen" id="">
-
+      <section className="bg-linear-to-b from-[#2F4F12] to-[#66863E] min-h-screen pt-16 font-semibold" id="section-2">
+        <h1 className="font-sora text-[44px] text-center">Tingkat Polusi Plastik di Indonesia</h1>
       </section>
     </>
   );

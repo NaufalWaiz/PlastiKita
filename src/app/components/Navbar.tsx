@@ -16,7 +16,7 @@ export default function Navbar() {
                 <div className="w-6 h-1 bg-[#88A825] rounded-full"></div>
                 <div className="w-6 h-1 bg-[#88A825] rounded-full"></div>
             </div>
-            <div className={`${isActive ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 z-10 flex w-10/12 h-[100vh] sm:h-auto sm:w-full fixed transition sm:absolute bg-[#88A825] sm:bg-white font-medium text-[21px] gap-14 text-black py-5 flex-col sm:flex-row sm:justify-end px-32 font-poppins`}>
+            <div className={`${isActive ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 z-10 flex w-10/12 h-screen sm:h-auto sm:w-full fixed transition sm:absolute bg-[#88A825] sm:bg-white font-medium text-[21px] gap-14 text-black py-5 flex-col sm:flex-row sm:justify-end px-32 font-poppins`}>
                 <Link href={"#"}>Beranda</Link>
                 <Link href={"#"}>Tentang</Link>
                 <Link href={"#"}>Artikel</Link>

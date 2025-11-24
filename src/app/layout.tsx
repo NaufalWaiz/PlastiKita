@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Sora } from "next/font/google";
 import "./globals.css";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -19,6 +19,12 @@ const geistMono = Geist_Mono({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800']
+});
+
+const sora = Sora({
+  variable: '--font-sora',
+  subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800']
 });
 
@@ -46,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} bg-white antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${sora.variable} bg-white antialiased`}>
         <Navbar />
         {children}
       </body>

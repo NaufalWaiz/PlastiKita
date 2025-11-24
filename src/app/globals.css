@@ -6,6 +6,7 @@
   --foreground: #f8fafc;
   --glow: rgba(56, 189, 248, 0.45);
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 @theme inline {
@@ -14,6 +15,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-poppins: var(--font-poppins);
+  --font-sora: var(--font-sora);
 }
 
 * {
