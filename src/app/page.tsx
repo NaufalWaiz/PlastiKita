@@ -7,7 +7,7 @@ export default function Home() {
     <>
       {/** First Section */}
       <section
-        className="min-h-screen bg-none text-black pt-14 px-3 sm:px-12 sm:pt-36 font-poppins sm:flex sm:flex-row"
+        className="min-h-screen bg-none text-black pt-14 px-3 sm:px-12 sm:pt-36 font-poppins sm:flex xl:items-center sm:flex-row"
         id="beranda"
       >
         <div className="w-full md:w-7/12 lg:w-8/12">
@@ -77,12 +77,12 @@ export default function Home() {
 
       {/** Third section */}
       <section className="min-h-screen bg-white pt-32 pb-16">
-        <h1 className="font-sora text-[#3F3313] text-[44px] font-[600] text-center mb-28">
+        <h1 className="font-sora text-[#3F3313] text-[44px] font-[600] text-center mb-20 lg:mb-28">
           Tujuan Kami
         </h1>
-        <div className="flex flex-row justify-center items-center gap-24">
-          <div className="w-6/12">
-            <p className="font-poppins text-black text-[24px] text-center">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
+          <div className="w-10/12 md:w-8/12 lg:w-6/12">
+            <p className="font-poppins text-black text-[18px] md:text-[24px] text-center">
               Mengingat Indonesia masih menjadi salah satu penyumbang sampah
               plastik terbesar di dunia, platform ini hadir untuk meningkatkan
               literasi lingkungan masyarakat. Melalui materi edukatif tentang
@@ -94,9 +94,9 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-row items-center gap-5">
-            <div className="bg-tumpukan-sampah bg-center bg-cover w-[128px] h-[310px] rounded-[30px]"></div>
-            <div className="bg-sampah-bakar bg-center bg-cover w-[153px] h-[432px] rounded-[30px]"></div>
-            <div className="bg-sampah-air bg-center bg-cover w-[128px] h-[310px] rounded-[30px]"></div>
+            <div className="bg-tumpukan-sampah bg-center bg-cover w-[68px] h-[250px] xsm:w-[88px] xsm:h-[270px] md:w-[128px] md:h-[310px] rounded-[18px] xsm:rounded-[30px]"></div>
+            <div className="bg-sampah-bakar bg-center bg-cover w-[98px] h-[320px] xsm:w-[118px] xsm:h-[370px] md:w-[153px] md:h-[432px] rounded-[30px]"></div>
+            <div className="bg-sampah-air bg-center bg-cover w-[68px] h-[250px] xsm:w-[88px] xsm:h-[270px] md:w-[128px] md:h-[310px] rounded-[18px] xsm:rounded-[30px]"></div>
           </div>
         </div>
       </section>
