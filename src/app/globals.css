@@ -38,3 +38,15 @@ body {
 .bg-demo-sampah{
   background-image: url('/img/demo-sampah.jpg');
 }
+
+.bg-sampah-bakar{
+  background-image: url('/img/burning-trash.jpg')
+}
+
+.bg-tumpukan-sampah{
+  background-image: url('/img/pile-of-trash.jpg');
+}
+
+.bg-sampah-air{
+  background-image: url('/img/trash-underwater.jpg');
+}

@@ -60,17 +60,44 @@ export default function Home() {
         </h1>
         <div className="w-full flex justify-center mb-10">
           <p className="w-[80%] text-center font-[400] font-poppins text-[20px]">
-            Polusi plastik adalah masalah lingkungan yang semakin mengkhawatirkan
-            di Indonesia. Sampah plastik yang tidak terkelola dengan baik
-            mencemari tanah, sungai, dan laut, serta membahayakan ekosistem dan
-            kesehatan manusia. Menurut data dari World Bank tahun 2021, Indonesia
-            menghasilkan lebih dari 7,8 juta ton sampah plastik setiap tahun, dan
-            sekitar 3,2 juta ton di antaranya berakhir di laut.
+            Polusi plastik adalah masalah lingkungan yang semakin
+            mengkhawatirkan di Indonesia. Sampah plastik yang tidak terkelola
+            dengan baik mencemari tanah, sungai, dan laut, serta membahayakan
+            ekosistem dan kesehatan manusia. Menurut data dari World Bank tahun
+            2021, Indonesia menghasilkan lebih dari 7,8 juta ton sampah plastik
+            setiap tahun, dan sekitar 3,2 juta ton di antaranya berakhir di
+            laut.
           </p>
         </div>
         <div className="w-full flex flex-col sm:flex-row gap-10 items-center sm:justify-items-normal justify-center">
           <div className="bg-sampah-gorontalo bg-cover bg-center w-[261px] h-[221px] xsm:w-[361px] xsm:h-[321px] sm:w-[461px] sm:h-[421px] rounded-2xl shadow-2xl"></div>
           <div className="bg-demo-sampah bg-cover bg-center w-[261px] h-[221px] xsm:w-[361px] xsm:h-[321px] sm:w-[461px] sm:h-[421px] rounded-2xl shadow-2xl"></div>
+        </div>
+      </section>
+
+      {/** Third section */}
+      <section className="min-h-screen bg-white pt-32 pb-16">
+        <h1 className="font-sora text-[#3F3313] text-[44px] font-[600] text-center mb-28">
+          Tujuan Kami
+        </h1>
+        <div className="flex flex-row justify-center items-center gap-24">
+          <div className="w-6/12">
+            <p className="font-poppins text-black text-[24px] text-center">
+              Mengingat Indonesia masih menjadi salah satu penyumbang sampah
+              plastik terbesar di dunia, platform ini hadir untuk meningkatkan
+              literasi lingkungan masyarakat. Melalui materi edukatif tentang
+              dampak dan penanganan sampah plastik, pengguna diharapkan dapat
+              membangun kebiasaan minim sampah dan menerapkan prinsip reduce,
+              reuse, recycle. Dengan demikian, platform ini turut mendukung
+              target Indonesia Bebas Sampah Plastik 2030 dan upaya pelestarian
+              lingkungan.
+            </p>
+          </div>
+          <div className="flex flex-row items-center gap-5">
+            <div className="bg-tumpukan-sampah bg-center bg-cover w-[128px] h-[310px] rounded-[30px]"></div>
+            <div className="bg-sampah-bakar bg-center bg-cover w-[153px] h-[432px] rounded-[30px]"></div>
+            <div className="bg-sampah-air bg-center bg-cover w-[128px] h-[310px] rounded-[30px]"></div>
+          </div>
         </div>
       </section>
     </>
