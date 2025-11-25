@@ -10,6 +10,7 @@
 }
 
 @theme inline {
+  --breakpoint-xsm: 375px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -28,4 +29,12 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
+}
+
+.bg-sampah-gorontalo{
+  background-image: url('/img/sampah-gorontalo.jpg');
+}
+
+.bg-demo-sampah{
+  background-image: url('/img/demo-sampah.jpg');
 }
