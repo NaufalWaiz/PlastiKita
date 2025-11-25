@@ -1,6 +1,6 @@
 import Trash from "./components/Trash";
 import CTAButton from "./components/CTAButton";
-import { text } from "stream/consumers";
+import FAQ from "./components/FAQ";
 
 export default function Home() {
   return (
@@ -76,7 +76,7 @@ export default function Home() {
       </section>
 
       {/** Third section */}
-      <section className="min-h-screen bg-white pt-32 pb-16">
+      <section className="min-h-screen pt-32 pb-32">
         <h1 className="font-sora text-[#3F3313] text-[44px] font-[600] text-center mb-20 lg:mb-28">
           Tujuan Kami
         </h1>
@@ -99,6 +99,12 @@ export default function Home() {
             <div className="bg-sampah-air bg-center bg-cover w-[68px] h-[250px] xsm:w-[88px] xsm:h-[270px] md:w-[128px] md:h-[310px] rounded-[18px] xsm:rounded-[30px]"></div>
           </div>
         </div>
+      </section>
+      
+      {/** Fourth Section */}
+      <section className="min-h-screen py-16">
+        <h1 className="font-sora font-[600] text-[44px] text-[#3F3313] text-center mb-12">Pertanyaan yang Sering Diajukan</h1>
+        <FAQ />
       </section>
     </>
   );
