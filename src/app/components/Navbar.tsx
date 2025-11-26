@@ -25,7 +25,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <>
+        <div className="relative z-20">
             <div className="flex flex-col gap-1 left-3 top-3 sm:hidden sticky w-fit" onClick={activateNavbarMobile}> {/** Only appears in mobile resolution */}
                 <div className="w-6 h-1 bg-[#88A825] rounded-full"></div>
                 <div className="w-6 h-1 bg-[#88A825] rounded-full"></div>
@@ -37,6 +37,6 @@ export default function Navbar() {
                 <Link href={"#"}>Artikel</Link>
                 <Link href={"#"}>Quiz</Link>
             </div>
-        </>
+        </div>
     );
 }
