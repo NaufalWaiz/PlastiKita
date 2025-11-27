@@ -1,3 +1,5 @@
+import TeamCarousel from "../components/TeamCarousel";
+
 export default function Tentang() {
     return (
       <>
@@ -53,20 +55,21 @@ export default function Tentang() {
             </p>
             <div className="flex flex-row gap-10 w-full justify-center">
                 <div className="w-5/12 h-[552px] rounded-[50px] bg-produksi-sampah bg-cover bg-center relative">
-                    <div className="bg-[#3B3B0E] rounded-t-[20px] w-6/12 px-10 py-4 absolute -top-12 left-1/2 -translate-x-1/2">
+                    <div className="bg-[#3B3B0E] rounded-t-[20px] w-6/12 py-4 absolute -top-12 left-1/2 -translate-x-1/2">
                         <h1 className="font-poppins font-[500] text-24px text-center">Produksi & Sampah Plastik Indonesia (2024)</h1>
                     </div>
                 </div>
                 <div className="w-5/12 h-[552px] rounded-[50px] bg-sampah-gorontalo bg-cover bg-center relative">
-                    <div className="bg-[#3B3B0E] rounded-t-[20px] w-6/12 px-10 py-4 absolute -top-12 left-1/2 -translate-x-1/2">
+                    <div className="bg-[#3B3B0E] rounded-t-[20px] w-6/12 py-4 absolute -top-12 left-1/2 -translate-x-1/2">
                         <h1 className="font-poppins font-[500] text-24px text-center">Komposisi Polusi Plastik di Indonesia (2023)</h1>
                     </div>
                 </div>
             </div>
           </div>
         </section>
-        <section className="min-h-screen">
-
+        <section className="min-h-screen pt-32">
+            <h1 className="font-sora font-[800] text-center text-[#3F3313] text-[58px]">Team <span className="text-[#90C444]">PlastiKita</span></h1>
+            <TeamCarousel />
         </section>
       </>
     );
