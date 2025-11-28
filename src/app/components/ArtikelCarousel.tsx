@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 interface TipeArtikel{
     image : string,
     title : string,
-    description: string
+    description: string,
+    artikel: string,
 }
 
 const artikel: TipeArtikel[] = [
@@ -13,48 +14,56 @@ const artikel: TipeArtikel[] = [
         image: 'bg-sampah-gorontalo',
         title: 'Laut Terdampak Plastik',
         description: 'Menurut United Nations Environment Programme (UNEP) atau Badan PBB yang mengurus program lingkungan, tahun lalu dunia menghasilkan sekitar 400 juta ton limbah plastik. Banjir botol air dan sham ...',
+        artikel : 'https://mongabay.co.id/2025/06/05/hari-lingkungan-hidup-2025-polusi-plastik-kian-penuhi-laut/'
     }
     ,
     {
         image: 'bg-demo-sampah',
         title: 'Plastik Ubah Bumi',
         description: 'Tim peneliti menunjukkan bahwa polusi plastik mengubah proses seluruh sistem bumi, dan memengaruhi semua masalah lingkungan global yang mendesak, termasuk perubahan iklim, hilangnya ...',
+        artikel: 'https://betahita.id/news/detail/10692/polusi-plastik-mengubah-sistem-bumi-riset.html?v=1731200256'
     }
     ,
     {
         image: 'bg-people-grouping',
         title: 'UB Teliti Polusi Plastik',
         description: 'Masalah polusi plastik semakin memprihatinkan. Berdasarkan data Sistem Informasi Pengelolaan Sampah Nasional KLHK (2023), sampah plastik menempati urutan tertinggi kedua setelah sam...',
+        artikel: 'https://www.brin.go.id/news/125226/air-hujan-jakarta-mengandung-mikroplastik-brin-ingatkan-bahaya-polusi-dari-langit'
     }
     ,
     {
         image: 'bg-aliansi-anti-polusi',
         title: 'Aliansi Antipolusi',
         description: 'Indonesia melakukan penandatanganan nota kesepahaman atau MoU dengan Britania Raya terkait penanganan polusi plastik. Ini menjadi fokus karena kebijakannya bel...',
+        artikel: 'https://news.detik.com/berita/d-8216158/indonesia-dan-britania-raya-teken-mou-penanganan-polusi-plastik'
     }
     ,
     {
         image: 'bg-cigarettes',
         title: 'Polusi Plastik dari Rokok',
         description: 'PELUNCURAN hasil brand audit sampah rokok di Jabodetabek pada peringatan Hari Kesehatan Nasional 2025 mengungkap temuan mencengangkan bahwa puntung dan kema...',
+        artikel: 'https://mediaindonesia.com/humaniora/831296/sampah-rokok-jadi-sumber-polusi-plastik-paling-persisten-di-perkotaan#google_vignette'
     }
     ,
     {
         image: 'bg-langit-mendung',
         title: 'Mikroplastik pada Air Hujan',
         description: 'Rata-rata, peneliti menemukan sekitar 15 partikel mikroplastik per meter persegi per hari pada sampel hujan di kawasan pesisir Jakarta. Menurut Reza, fenomena ini terjadi karena siklus plastik kini telah ...',
+        artikel: 'https://ppsub.ub.ac.id/polusi-plastik-kian-memprihatinkan-tim-dosen-ub-teliti-persepsi-mahasiswa/'
     }
     ,
     {
         image: 'bg-produksi-sampah',
         title: 'Plastik: Kebutuhan vs Masalah',
         description: 'Pemerintah Indonesia sangat berkomitmen untuk mengatasi permasalahan sampah plastik di Tanah Air. "Indonesia sangat kuat tekad untuk kemudian mengurangi secara ...',
+        artikel: 'https://dlh.bulelengkab.go.id/informasi/detail/artikel/17_sampah-plastik-di-sekitar-kita-antara-kebutuhan-dan-masalah-yang-ditimbulkan'
     }
     ,
     {
         image: 'bg-sampah-plastik',
         title: 'Kolaborasi Plastik COP30',
         description: 'Di Indonesia masih banyak ditemukan pemakaian plastik yang merupakan salah satu material digunakan untuk kemasan sekali pakai. Namun sayang, pengelolaan sampah plastik di Indonesia belum ...',
+        artikel: 'https://esgnow.republika.co.id/berita/t5nl3e416/indonesianorwegia-bahas-solusi-sampah-plastik-di-cop30'
     }
 ];
 
@@ -88,8 +97,10 @@ export default function ArtikelCarousel(){
                         <p className="text-[#3F3313] font-poppins font-[400] text-[12px] mb-7">
                            {item.description}
                         </p>
-                        <div className="bg-[#4A3A1D] py-2 px-8 font-poppins text-[9px] font-semibold rounded-full">
-                            <h1 className="text-center">Baca Selengkapnya</h1>
+                        <div className="mx-auto w-fit">
+                            <a className="bg-[#4A3A1D] py-2 px-8 font-poppins text-[9px] font-semibold rounded-full text-center" href={item.artikel} target="_blank">
+                                Baca Selengkapnya
+                            </a>
                         </div>
                     </div>
                 </div>
