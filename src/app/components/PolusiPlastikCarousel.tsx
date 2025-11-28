@@ -129,9 +129,6 @@ export default function PolusiPlastikCarousel() {
               <p className="text-gray-700 leading-relaxed mb-6">
                 {pollutionData[currentIndex].description}
               </p>
-              <button className="bg-green-600 hover:bg-green-700 text-white text-sm px-5 py-2 rounded-full font-medium transition-colors">
-                Kembali
-              </button>
             </div>
             <div className="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center flex-shrink-0">
               <div className={`${pollutionData[currentIndex].icon} h-[48px] w-[48px] bg-cover bg-center`}></div>

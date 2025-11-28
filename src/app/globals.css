@@ -100,4 +100,23 @@ body {
   background-image: url('/asset/bungkus-snack.png');
 }
 
+.bg-people-grouping{
+  background-image: url('/img/people-grouping.jpg');
+}
+
+.bg-aliansi-anti-polusi{
+  background-image: url('/img/aliansi-anti-polusi.jpg')
+}
+
+.bg-cigarettes{
+  background-image: url('/img/cigarettes.png');
+}
+
+.bg-langit-mendung{
+  background-image: url('/img/langit-mendung.png');
+}
+
+.bg-sampah-plastik{
+  background-image: url('/img/sampah-plastik.jpg');
+}
 
