@@ -51,6 +51,10 @@ body {
   background-image: url('/img/trash-underwater.jpg');
 }
 
+.bg-people-collect-trash{
+  background-image: url('/img/people-collect-trash.jpg');
+}
+
 @keyframes fadeIn{
   from {
     opacity: 0;
@@ -79,3 +83,21 @@ body {
 .bg-produksi-sampah{
   background-image: url('/img/produksi-sampah.jpg');
 }
+
+.icon-microplastic{
+  background-image: url('/asset/microplastic.png');
+}
+
+.icon-macroplastic{
+  background-image: url('/asset/macroplastic.png');
+}
+
+.icon-net{
+  background-image: url('/asset/net.png');
+}
+
+.icon-bungkus-snack{
+  background-image: url('/asset/bungkus-snack.png');
+}
+
+
