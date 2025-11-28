@@ -15,12 +15,19 @@ export default function FAQ() {
         },
         {
             question: 'Mengapa polusi plastik menjadi masalah besar di Indonesia?',
-            answer: 'Polusi plastik adalah kondisi ketika sampah plastik menumpuk di lingkungan karena sifatnya yang sulit terurai. Penumpukan ini dapat mencemari tanah, air, hingga udara, serta mengancam keberlangsungan ekosistem dan kesehatan manusia.'
-        }
-        ,
+            answer: 'Indonesia masih menghasilkan jumlah sampah plastik yang sangat besar setiap tahunnya. Sebagian tidak dikelola dengan baik, sehingga banyak yang berakhir di sungai, pesisir, dan laut. Kurangnya fasilitas daur ulang dan tingginya penggunaan plastik sekali pakai memperburuk situasi ini.'
+        },
         {
             question: 'Apa yang bisa dilakukan untuk mengurangi polusi plastik?',
-            answer: 'Polusi plastik adalah kondisi ketika sampah plastik menumpuk di lingkungan karena sifatnya yang sulit terurai. Penumpukan ini dapat mencemari tanah, air, hingga udara, serta mengancam keberlangsungan ekosistem dan kesehatan manusia.'
+            answer: 'Langkah kecil seperti membawa tas belanja sendiri, menggunakan botol minum dan wadah makan reusable, memilah sampah di rumah, serta mengurangi pembelian produk berkemasan plastik dapat memberikan dampak besar jika dilakukan secara konsisten.'
+        },
+        {
+            question: 'Apakah semua plastik bisa didaur ulang?',
+            answer: 'Tidak semua jenis plastik dapat didaur ulang. Hanya beberapa tipe seperti PET dan HDPE adalah yang paling sering diproses. Plastik multilayer atau plastik dengan campuran bahan lain cenderung sulit didaur ulang dan biasanya berakhir di Tempat Pembuangan Akhir (TPA).'
+        },
+        {
+            question: 'Apa dampak polusi plastik terhadap kesehatan manusia?',
+            answer: 'Polusi plastik dapat berdampak langsung maupun tidak langsung pada kesehatan manusia. Mikroplastik yang mencemari air minum, udara, dan makanan dapat masuk ke dalam tubuh tanpa disadari. Paparan jangka panjang berpotensi memengaruhi sistem pernapasan, hormon, hingga meningkatkan risiko gangguan kesehatan tertentu karena bahan kimia berbahaya yang melekat pada partikel plastik tersebut.'
         }
 
     ];
