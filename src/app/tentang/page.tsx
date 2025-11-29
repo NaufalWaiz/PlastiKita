@@ -6,7 +6,7 @@ export default function Tentang() {
         <section className="min-h-[80vh] pt-48 text-black">
           <div className="w-full flex flex-col items-center font-poppins font-[600]">
             <h1 className="text-[58px]">TENTANG</h1>
-            <p className="text-[16px] sm:text-[32px]">
+            <p className="text-[16px] text-center sm:text-[32px]">
               Ingin tahu lebih dalam mengenai{" "}
               <span className="bg-[#F89B11]">PlastiKita</span>?
             </p>
