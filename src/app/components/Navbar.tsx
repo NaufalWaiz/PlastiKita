@@ -74,8 +74,8 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <Link
-                        href="#laporan"
-                        className={`${path === '/' ? 'block' : 'hidden'} rounded-full bg-[#f6a500] px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_16px_38px_rgba(246,165,0,0.4)]`}
+                        href="/#laporan"
+                        className="rounded-full bg-[#f6a500] px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_16px_38px_rgba(246,165,0,0.4)]"
                     >
                         Laporkan
                     </Link>
@@ -98,9 +98,9 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <Link
-                        href="#laporan"
+                        href="/#laporan"
                         onClick={() => setIsMobileOpen(false)}
-                        className={`${path === '/' ? 'block' : 'hidden'} rounded-full bg-[#f6a500] px-4 py-2 text-center text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_14px_34px_rgba(246,165,0,0.4)]`}
+                        className="rounded-full bg-[#f6a500] px-4 py-2 text-center text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_14px_34px_rgba(246,165,0,0.4)]"
                     >
                         Laporkan
                     </Link>
