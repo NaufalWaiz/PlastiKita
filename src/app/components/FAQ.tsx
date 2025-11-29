@@ -1,87 +1,116 @@
 "use client";
 
-import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useRef, useLayoutEffect } from "react";
 
+type FAQItem = {
+    question: string;
+    answer: string;
+};
+
+const FAQ_ITEMS: FAQItem[] = [
+    {
+        question: "Apa yang dimaksud dengan polusi plastik?",
+        answer:
+            "Polusi plastik adalah kondisi ketika sampah plastik menumpuk di lingkungan karena sifatnya yang sulit terurai. Penumpukan ini dapat mencemari tanah, air, hingga udara, serta mengancam keberlangsungan ekosistem dan kesehatan manusia.",
+    },
+    {
+        question: "Mengapa polusi plastik menjadi masalah besar di Indonesia?",
+        answer:
+            "Sebagai negara kepulauan dengan konsumsi plastik tinggi, banyak sampah yang berakhir di sungai dan laut karena kurangnya infrastruktur pengelolaan dan kebiasaan memilah.",
+    },
+    {
+        question: "Apa yang bisa dilakukan untuk mengurangi polusi plastik?",
+        answer:
+            "Mulai dengan reduce, reuse, recycle: kurangi penggunaan plastik sekali pakai, gunakan ulang wadah yang ada, dan pastikan plastik bersih untuk didaur ulang.",
+    },
+    {
+        question: "Apakah semua plastik bisa didaur ulang?",
+        answer:
+            "Tidak semua jenis plastik dapat didaur ulang di fasilitas lokal. Periksa kode resin 1 dan 2 (PET, HDPE) sebagai prioritas utama untuk daur ulang.",
+    },
+    {
+        question: "Apa dampak polusi plastik terhadap kesehatan manusia?",
+        answer:
+            "Mikroplastik dapat masuk ke rantai makanan dan memengaruhi kesehatan melalui kontaminasi air dan pangan, serta membawa bahan kimia berbahaya.",
+    },
+];
+
 export default function FAQ() {
-    const [isOpen, setIsOpen] = useState(null);
-
-    const FAQ = [
-
-        {
-            question: 'Apa yang dimaksud dengan polusi plastik?',
-            answer: 'Polusi plastik adalah kondisi ketika sampah plastik menumpuk di lingkungan karena sifatnya yang sulit terurai. Penumpukan ini dapat mencemari tanah, air, hingga udara, serta mengancam keberlangsungan ekosistem dan kesehatan manusia.'
-        },
-        {
-            question: 'Mengapa polusi plastik menjadi masalah besar di Indonesia?',
-            answer: 'Indonesia masih menghasilkan jumlah sampah plastik yang sangat besar setiap tahunnya. Sebagian tidak dikelola dengan baik, sehingga banyak yang berakhir di sungai, pesisir, dan laut. Kurangnya fasilitas daur ulang dan tingginya penggunaan plastik sekali pakai memperburuk situasi ini.'
-        },
-        {
-            question: 'Apa yang bisa dilakukan untuk mengurangi polusi plastik?',
-            answer: 'Langkah kecil seperti membawa tas belanja sendiri, menggunakan botol minum dan wadah makan reusable, memilah sampah di rumah, serta mengurangi pembelian produk berkemasan plastik dapat memberikan dampak besar jika dilakukan secara konsisten.'
-        },
-        {
-            question: 'Apakah semua plastik bisa didaur ulang?',
-            answer: 'Tidak semua jenis plastik dapat didaur ulang. Hanya beberapa tipe seperti PET dan HDPE adalah yang paling sering diproses. Plastik multilayer atau plastik dengan campuran bahan lain cenderung sulit didaur ulang dan biasanya berakhir di Tempat Pembuangan Akhir (TPA).'
-        },
-        {
-            question: 'Apa dampak polusi plastik terhadap kesehatan manusia?',
-            answer: 'Polusi plastik dapat berdampak langsung maupun tidak langsung pada kesehatan manusia. Mikroplastik yang mencemari air minum, udara, dan makanan dapat masuk ke dalam tubuh tanpa disadari. Paparan jangka panjang berpotensi memengaruhi sistem pernapasan, hormon, hingga meningkatkan risiko gangguan kesehatan tertentu karena bahan kimia berbahaya yang melekat pada partikel plastik tersebut.'
-        }
-
-    ];
-
-    const questionRef = useRef<(HTMLDivElement | null)[]>([]);
-    const answerRef = useRef<(HTMLDivElement | null)[]>([]);
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const questionRef = useRef<Array<HTMLDivElement | null>>([]);
+    const answerRef = useRef<Array<HTMLDivElement | null>>([]);
     const [qHeight, setQHeight] = useState<number[]>([]);
     const [aHeight, setAHeight] = useState<number[]>([]);
 
     useLayoutEffect(() => {
-        const q = FAQ.map((_, i) => questionRef.current[i]?.scrollHeight ?? 0);
-        const a = FAQ.map((_, i) => answerRef.current[i]?.scrollHeight ?? 0);
+        const q = FAQ_ITEMS.map((_, i) => questionRef.current[i]?.scrollHeight ?? 0);
+        const a = FAQ_ITEMS.map((_, i) => answerRef.current[i]?.scrollHeight ?? 0);
 
         setQHeight(q);
         setAHeight(a);
-    },[]);
+    }, []);
 
-    const triggerOpenAnswer = (index: any) => {
-        setIsOpen(isOpen === index ? null : index);
+    const triggerOpenAnswer = (index: number) => {
+        setOpenIndex(openIndex === index ? null : index);
     };
 
     return (
-        <div className="flex flex-col gap-10 items-center">
-            {FAQ.map((item, key) => {
+        <div className="flex flex-col items-center gap-6">
+            {FAQ_ITEMS.map((item, key) => {
                 const qH = qHeight[key] ?? 0;
                 const aH = aHeight[key] ?? 0;
-                const totalHeight = qH + aH + 40;
-                return(
-                    <div key={key} className="w-full flex items-center flex-col gap-10 overflow-hidden duration-500 transition-all"
+                const totalHeight = qH + aH + 36;
+                const isOpen = openIndex === key;
+                const delay = 0.1 + key * 0.05;
+
+                return (
+                    <div
+                        key={item.question}
+                        className={`w-full max-w-6xl overflow-hidden rounded-[18px] bg-gradient-to-r from-[#eaf4d7] via-[#f3f8e6] to-[#eaf4d7] shadow-[0_18px_50px_rgba(80,120,40,0.12)] transition-all duration-500 hover:shadow-[0_20px_55px_rgba(80,120,40,0.16)] ${isOpen ? "ring-2 ring-[#88a825]/40" : ""} animate-rise`}
                         style={{
-                            maxHeight: isOpen == key ? totalHeight + "px" : qH + "px",
-                        }}>
+                            maxHeight: isOpen ? `${totalHeight}px` : `${qH}px`,
+                            animationDelay: `${delay}s`,
+                        }}
+                    >
                         <div
-                            className="bg-[#F0F7E7] rounded-[25px] px-8 py-6 w-10/12 flex flex-row justify-between relative z-10 cursor-pointer" 
-                            onClick={() => { triggerOpenAnswer(key) }}
-                            ref={(el) => {(questionRef.current[key] = el)}}>
-                            <h1 className="font-poppins font-[500] text-[28px] text-[#47621F]">
-                                {item.question}
-                            </h1>
-                            <div className="w-[40px] h-[40px] bg-[#88A825] rounded-full shadow-[0_10px_35px_1px_black] flex justify-center items-center">
-                                <FontAwesomeIcon icon={faArrowDown} className={`text-white transition-all  ${isOpen === key ? 'rotate-180' : 'rotate-0'}`} />
+                            className="flex cursor-pointer items-center justify-between px-6 py-5 transition duration-300 hover:bg-white/40"
+                            onClick={() => {
+                                triggerOpenAnswer(key);
+                            }}
+                            ref={(el) => {
+                                questionRef.current[key] = el;
+                            }}
+                        >
+                            <div className="flex items-center gap-3">
+                                <span className="grid h-8 w-8 place-items-center rounded-full bg-[#88a825]/20 text-[#304b17]">
+                                    {String(key + 1).padStart(2, "0")}
+                                </span>
+                                <h3 className="font-poppins text-lg font-semibold text-[#304b17] sm:text-xl">
+                                    {item.question}
+                                </h3>
+                            </div>
+                            <div className={`grid h-10 w-10 place-items-center rounded-full text-white shadow-[0_10px_30px_rgba(120,168,37,0.45)] transition ${isOpen ? "bg-[#304b17]" : "bg-[#88a825]"}`}>
+                                <FontAwesomeIcon
+                                    icon={faArrowDown}
+                                    className={`transition-all ${isOpen ? "rotate-180" : "rotate-0"}`}
+                                />
                             </div>
                         </div>
-                        <div 
-                            className={`bg-[#396003] w-10/12 rounded-[25px]  px-8 py-6 transition-all duration-500 duration-500 z-0 fade-in`}
-                            ref={(el) => {(answerRef.current[key] = el)}}>
-                            <p className="text-poppins text-[#CEE8A9] text-[23px] font-[500]">
+                        <div
+                            className="px-6 pb-6"
+                            ref={(el) => {
+                                answerRef.current[key] = el;
+                            }}
+                        >
+                            <div className="rounded-[14px] bg-[#cde5a5] px-4 py-4 text-sm leading-relaxed text-[#2d4315] sm:text-base shadow-inner shadow-[#88a825]/20">
                                 {item.answer}
-                            </p>
+                            </div>
                         </div>
                     </div>
-                    )
-                })
-            }
+                );
+            })}
         </div>
     );
 }

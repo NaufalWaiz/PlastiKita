@@ -1,111 +1,160 @@
-import Trash from "./components/Trash";
-import CTAButton from "./components/CTAButton";
+import Image from "next/image";
+import Link from "next/link";
 import FAQ from "./components/FAQ";
+import NewsletterForm from "./components/NewsletterForm";
+import ScrollReveal from "./components/ScrollReveal";
+
+const highlightStats = [
+  { value: "7,8 jt", label: "Ton per tahun", icon: "📊" },
+  { value: "3,2 jt", label: "Bocor ke laut", icon: "🌊" },
+  { value: "200+", label: "Kota terdampak", icon: "📍" },
+];
 
 export default function Home() {
   return (
-    <>
-      {/** First Section */}
-      <section
-        className="min-h-screen bg-none text-black pt-14 px-3 sm:px-12 sm:pt-36 font-poppins sm:flex xl:items-center sm:flex-row"
-        id="beranda"
-      >
-        <div className="w-full md:w-7/12 lg:w-8/12">
-          <h1 className="font-semibold text-[28px] sm:text-[32px] w-11/12 sm:w-11/12 mb-6">
-            Bagaimana Kondisi Polusi Plastik yang Kian Memprihatinkan di{" "}
-            <span className="bg-[#F89B11] inline-block text-white">
-              Indonesia
-            </span>
-            ?
-          </h1>
-          <p className="opacity-50 w-full sm:w-10/12 text-[12px] xsm:text-[15px] sm:text-[16px] mb-5 leading-relaxed">
-            Polusi plastik adalah masalah lingkungan yang semakin
-            mengkhawatirkan di Indonesia. Sampah plastik yang tidak terkelola
-            dengan baik mencemari tanah, sungai, dan laut, serta membahayakan
-            ekosistem dan kesehatan manusia. Menurut data dari World Bank tahun
-            2021, Indonesia menghasilkan lebih dari 7,8 juta ton sampah plastik
-            setiap tahun, dan sekitar 3,2 juta ton di antaranya berakhir di
-            laut.
-          </p>
-          <CTAButton section="#section-2" text="Jelajahi Sekarang" />
-        </div>
-        <div className="w-4/12 lg:w-3/12 hidden md:block">
-          <Trash />
-        </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute -bottom-6 sm:-bottom-1 left-0 w-full -z-10"
-          preserveAspectRatio="none"
-          viewBox="0 0 1440 320"
-        >
-          <path
-            fill="#2F4F12"
-            fillOpacity="1"
-            d="M0 240 C180 255, 350 270, 550 270 C780 270, 920 245, 1160 175 C1280 135, 1370 125, 1440 145 L1440 320 L0 320 Z"
-          ></path>
-        </svg>
-      </section>
+    <div className="min-h-screen bg-slate-950 text-white">
+      <div className="absolute inset-x-0 top-0 -z-10 h-[800px] bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.35),_transparent_60%)]" />
+      <main className="relative mx-auto flex max-w-6xl flex-col gap-16 px-6 py-16 sm:px-10 lg:px-0">
+        <section className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+          <div className="space-y-8">
+            <div className="inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-3 py-1 text-xs uppercase tracking-[0.3em] text-sky-100">
+              Gerakan PlastiKita
+            </div>
+            <div className="space-y-5">
+              <h1 className="font-semibold text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+                Selamatkan plastik, hidupkan ekonomi sirkular di seluruh
+                nusantara.
+              </h1>
+              <p className="text-base leading-relaxed text-slate-200 sm:text-lg">
+                Kami menghadirkan ekosistem edukasi, teknologi pelacakan, dan
+                ruang kolaborasi kreatif untuk memastikan plastik tidak lagi
+                berakhir di laut, tetapi kembali menjadi sumber daya bermanfaat.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="#program"
+                className="flex items-center justify-center rounded-full bg-sky-400 px-6 py-3 text-base font-semibold text-slate-950 shadow-lg shadow-sky-500/30 transition hover:bg-sky-300"
+              >
+                Lihat program terbaru
+              </Link>
+              <a
+                href="https://drive.google.com"
+                className="flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-base font-semibold text-white/90 transition hover:border-white hover:text-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Unduh paket edukasi
+              </a>
+            </div>
+            <div className="grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <p className="text-sm uppercase tracking-[0.4em] text-white/60">
+                Dampak 2024
+              </p>
+              <div className="grid gap-6 sm:grid-cols-2">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="space-y-1">
+                    <p className="text-3xl font-semibold text-white sm:text-4xl">
+                      {stat.value}
+                    </p>
+                    <p className="text-sm text-slate-300">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <PlasticsSceneLoader className="h-[420px]" />
+        </section>
 
-      {/** Second Section */}
-      <section
-        className="bg-linear-to-b from-[#2F4F12] to-[#66863E] min-h-screen py-16 font-semibold px-10"
-        id="section-2"
-      >
-        <h1 className="font-sora text-[44px] text-center mb-14">
-          Tingkat{" "}
-          <span className="relative after:content-[''] after:absolute sm:after:bottom-[-2px] after:rounded-2xl after:left-0 sm:after:left-[18px] after:w-[140px] sm:after:w-[198px] after:h-[5px] after:bg-[#DDA73A]">
-            Polusi Plastik
-          </span>{" "}
-          di Indonesia
-        </h1>
-        <div className="w-full flex justify-center mb-10">
-          <p className="w-[80%] text-center font-[400] font-poppins text-[20px]">
-            Polusi plastik adalah masalah lingkungan yang semakin
-            mengkhawatirkan di Indonesia. Sampah plastik yang tidak terkelola
-            dengan baik mencemari tanah, sungai, dan laut, serta membahayakan
-            ekosistem dan kesehatan manusia. Menurut data dari World Bank tahun
-            2021, Indonesia menghasilkan lebih dari 7,8 juta ton sampah plastik
-            setiap tahun, dan sekitar 3,2 juta ton di antaranya berakhir di
-            laut.
-          </p>
-        </div>
-        <div className="w-full flex flex-col sm:flex-row gap-10 items-center sm:justify-items-normal justify-center">
-          <div className="bg-sampah-gorontalo bg-cover bg-center w-[261px] h-[221px] xsm:w-[361px] xsm:h-[321px] sm:w-[461px] sm:h-[421px] rounded-2xl shadow-2xl"></div>
-          <div className="bg-demo-sampah bg-cover bg-center w-[261px] h-[221px] xsm:w-[361px] xsm:h-[321px] sm:w-[461px] sm:h-[421px] rounded-2xl shadow-2xl"></div>
-        </div>
-      </section>
-
-      {/** Third section */}
-      <section className="min-h-screen pt-32 pb-32">
-        <h1 className="font-sora text-[#3F3313] text-[44px] font-[600] text-center mb-20 lg:mb-28">
-          Tujuan Kami
-        </h1>
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-24">
-          <div className="w-10/12 md:w-8/12 lg:w-6/12">
-            <p className="font-poppins text-black text-[18px] md:text-[24px] text-center">
-              Mengingat Indonesia masih menjadi salah satu penyumbang sampah
-              plastik terbesar di dunia, platform ini hadir untuk meningkatkan
-              literasi lingkungan masyarakat. Melalui materi edukatif tentang
-              dampak dan penanganan sampah plastik, pengguna diharapkan dapat
-              membangun kebiasaan minim sampah dan menerapkan prinsip reduce,
-              reuse, recycle. Dengan demikian, platform ini turut mendukung
-              target Indonesia Bebas Sampah Plastik 2030 dan upaya pelestarian
-              lingkungan.
+        <section id="program" className="space-y-10">
+          <div className="space-y-3">
+            <p className="text-sm uppercase tracking-[0.4em] text-white/60">
+              Fokus inisiatif
+            </p>
+            <h2 className="text-3xl font-semibold sm:text-4xl">
+              Dari kampanye, data, hingga eksperimen material.
+            </h2>
+            <p className="text-base text-slate-300 sm:text-lg">
+              Setiap program PlastiKita didesain lintas disiplin agar komunitas,
+              pelajar, dan brand dapat bergerak bersama.
             </p>
           </div>
-          <div className="flex flex-row items-center gap-5">
-            <div className="bg-tumpukan-sampah bg-center bg-cover w-[68px] h-[250px] xsm:w-[88px] xsm:h-[270px] md:w-[128px] md:h-[310px] rounded-[18px] xsm:rounded-[30px]"></div>
-            <div className="bg-sampah-bakar bg-center bg-cover w-[98px] h-[320px] xsm:w-[118px] xsm:h-[370px] md:w-[153px] md:h-[432px] rounded-[30px]"></div>
-            <div className="bg-sampah-air bg-center bg-cover w-[68px] h-[250px] xsm:w-[88px] xsm:h-[270px] md:w-[128px] md:h-[310px] rounded-[18px] xsm:rounded-[30px]"></div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {highlights.map((highlight) => (
+              <article
+                key={highlight.title}
+                className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.45)] transition hover:-translate-y-1 hover:border-sky-300/20"
+              >
+                <h3 className="text-xl font-semibold text-white">
+                  {highlight.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                  {highlight.desc}
+                </p>
+              </article>
+            ))}
           </div>
-        </div>
-      </section>
-      
-      {/** Fourth Section */}
-      <section className="min-h-screen py-16">
-        <h1 className="font-sora font-[600] text-[44px] text-[#3F3313] text-center mb-12">Pertanyaan yang Sering Diajukan</h1>
-        <FAQ />
-      </section>
-    </>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-2">
+          {programs.map((program) => (
+            <article
+              key={program.title}
+              className="flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-b from-slate-800/40 to-slate-900/70 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.55)]"
+            >
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-white">
+                  {program.title}
+                </h3>
+                <p className="text-base leading-relaxed text-slate-200">
+                  {program.summary}
+                </p>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {program.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-sky-400/30 bg-sky-400/10 px-4 py-2 text-xs uppercase tracking-[0.3em] text-sky-100"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <section className="rounded-[32px] border border-white/10 bg-gradient-to-r from-sky-400/20 via-sky-500/10 to-transparent p-10 text-center backdrop-blur">
+          <div className="mx-auto max-w-3xl space-y-6">
+            <h3 className="text-3xl font-semibold text-white">
+              Mari wujudkan Indonesia bebas sampah plastik melalui data, desain,
+              dan aksi kolektif.
+            </h3>
+            <p className="text-base text-slate-200">
+              Gabung sebagai relawan riset, fasilitator sekolah, atau brand
+              challenger untuk menguji solusi material baru.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="mailto:hello@plastikita.id"
+                className="rounded-full bg-white px-6 py-3 text-base font-semibold text-slate-900 shadow-lg shadow-white/30 transition hover:bg-slate-100"
+              >
+                Kirim proposal kolaborasi
+              </a>
+              <Link
+                href="https://wa.me/6200000000"
+                className="rounded-full border border-white/40 px-6 py-3 text-base font-semibold text-white/90 transition hover:border-white"
+              >
+                Hubungi tim lapangan
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="border-t border-white/10 px-6 py-8 text-xs uppercase tracking-[0.4em] text-white/50 sm:px-10 lg:px-0">
+        PlastiKita • Platform kolaborasi plastik bertanggung jawab
+      </footer>
+    </div>
   );
 }

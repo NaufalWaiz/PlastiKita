@@ -1,44 +1,109 @@
 'use client'
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+
+const links = [
+    { href: "/", label: "Beranda" },
+    { href: "#program", label: "Tentang" },
+    { href: "/eksplorasi-3d", label: "Artikel" },
+    { href: "/quiz", label: "Quiz" },
+];
 
 export default function Navbar() {
-    const [isActiveMobile, setIsActiveMobile] = useState(false);
-    const [isActiveDesktop, setIsActiveDesktop] = useState(false);
-    const path = usePathname();
-
-    const activateNavbarMobile = () => { // Mobile resolution only
-        setIsActiveMobile(true);
-    }
+    const [isMobileOpen, setIsMobileOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const mounted = true;
 
     useEffect(() => {
-        const activateNavbarDesktop = () => {
-            if(window.scrollY > 0){
-                setIsActiveDesktop(true);
-            }
-            else{
-                setIsActiveDesktop(false);
-            }
-        }
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10);
+        };
 
-        window.addEventListener("scroll", activateNavbarDesktop);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
-        <div className="relative z-20">
-            <div className="flex flex-col gap-1 left-3 top-3 sm:hidden sticky w-fit" onClick={activateNavbarMobile}> {/** Only appears in mobile resolution */}
-                <div className="w-6 h-1 bg-[#88A825] rounded-full"></div>
-                <div className="w-6 h-1 bg-[#88A825] rounded-full"></div>
-                <div className="w-6 h-1 bg-[#88A825] rounded-full"></div>
+        <header
+            className={`fixed inset-x-0 top-0 z-30 transition duration-500 ${
+                scrolled
+                    ? "border-b border-white/40 bg-white/90 shadow-[0_6px_30px_rgba(0,0,0,0.12)] backdrop-blur-md"
+                    : "bg-white/80 backdrop-blur-sm"
+            }`}
+        >
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
+                <div className="flex items-center">
+                    <Image
+                        src="/img/logo.png"
+                        alt="PlastiKita logo"
+                        width={44}
+                        height={44}
+                        className="object-contain origin-center scale-[1.4] sm:scale-[1.8] lg:scale-[2]"
+                        priority
+                    />
+                </div>
+                <button
+                    className="sm:hidden"
+                    aria-label="Toggle navigation"
+                    aria-expanded={isMobileOpen}
+                    onClick={() => setIsMobileOpen((prev) => !prev)}
+                >
+                    <div className="flex flex-col gap-[6px]">
+                        <span className="block h-[3px] w-7 rounded-full bg-[#88a825] transition duration-300" />
+                        <span className="block h-[3px] w-7 rounded-full bg-[#88a825] transition duration-300" />
+                        <span className="block h-[3px] w-7 rounded-full bg-[#88a825] transition duration-300" />
+                    </div>
+                </button>
+                <nav className="hidden items-center gap-2 text-sm font-semibold text-[#2f4f12] sm:flex">
+                    {links.map((link, idx) => (
+                        <Link
+                            key={link.label}
+                            href={link.href}
+                            className="rounded-full px-4 py-2 transition hover:bg-[#e7f1d0] hover:text-[#2f4f12]"
+                            style={{
+                                transitionDelay: `${idx * 60}ms`,
+                                transform: mounted ? "translateY(0)" : "translateY(-8px)",
+                                opacity: mounted ? 1 : 0,
+                            }}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                    <Link
+                        href="#laporan"
+                        className="rounded-full bg-[#f6a500] px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_16px_38px_rgba(246,165,0,0.4)]"
+                    >
+                        Laporkan
+                    </Link>
+                </nav>
             </div>
-            <div className={`fixed ${isActiveMobile ? 'translate-x-0' : '-translate-x-full'} ${path ===  '/artikel' ? 'backdrop-blur-xs text-white' : 'backdrop-blur-none'} ${isActiveDesktop ? 'sm:bg-[#2F4F12] shadow-2xl text-white' : 'bg-none shadow-none text-black'} sm:translate-x-0 z-10 flex w-10/12 h-screen sm:h-auto sm:w-full fixed transition font-medium text-[21px] gap-14 py-5 flex-col sm:flex-row sm:justify-end px-32 font-poppins`}>
-                <Link href={"/"}>Beranda</Link>
-                <Link href={"/tentang"}>Tentang</Link>
-                <Link href={"/artikel"}>Artikel</Link>
-                <Link href={"/"}>Quiz</Link>
+            <div
+                className={`sm:hidden transition-all duration-400 ${
+                    isMobileOpen ? "pointer-events-auto max-h-[400px] opacity-100" : "pointer-events-none max-h-0 opacity-0"
+                }`}
+            >
+                <nav className="flex flex-col gap-4 border-t border-slate-200 px-6 pb-6 pt-4 text-base font-semibold text-[#2f4f12]">
+                    {links.map((link) => (
+                        <Link
+                            key={link.label}
+                            href={link.href}
+                            onClick={() => setIsMobileOpen(false)}
+                            className="rounded-full px-4 py-2 transition hover:bg-[#e7f1d0] hover:text-[#2f4f12]"
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                    <Link
+                        href="#laporan"
+                        onClick={() => setIsMobileOpen(false)}
+                        className="rounded-full bg-[#f6a500] px-4 py-2 text-center text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_14px_34px_rgba(246,165,0,0.4)]"
+                    >
+                        Laporkan
+                    </Link>
+                </nav>
             </div>
-        </div>
+        </header>
     );
 }

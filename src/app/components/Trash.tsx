@@ -23,7 +23,7 @@ export default function Trash(){
 
 
 function Model({ url } : {url : string}){
-    const { scene }: { scene: Group} = useGLTF(url) as any;
-    scene.scale.set(0.7, 0.7, 0.7)
+    const { scene }: { scene: Group } = useGLTF(url);
+    scene.scale.set(0.7, 0.7, 0.7);
     return <primitive object={scene} />;
 }
