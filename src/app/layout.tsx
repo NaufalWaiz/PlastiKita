@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Sora } from "next/font/google";
 import "./globals.css";
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import Navbar from "./components/Navbar";
+config.autoAddCss = false;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +15,20 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800']
+});
+
+const sora = Sora({
+  variable: '--font-sora',
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800']
+});
+
+
 
 export const metadata: Metadata = {
   title: "PlastiKita | Gerakan plastik bertanggung jawab",
@@ -34,9 +52,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-slate-950 text-white antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${sora.variable} bg-white antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>
