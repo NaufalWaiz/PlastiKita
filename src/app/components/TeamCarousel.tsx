@@ -44,7 +44,7 @@ const TeamCarousel: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8">
+    <div className="flex flex-col items-center xl:justify-center min-h-screen p-8">
       <div className="relative w-full max-w-5xl h-96 flex items-center justify-center">
         {cardData.map((card, index) => (
           <div

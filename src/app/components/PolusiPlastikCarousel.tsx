@@ -121,7 +121,7 @@ export default function PolusiPlastikCarousel() {
 
         {/* Content Card */}
         <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 shadow-xl">
-          <div className="flex items-start gap-6">
+          <div className="flex flex-col-reverse md:flex-row items-start gap-6">
             <div className="flex-1">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 {pollutionData[currentIndex].title}

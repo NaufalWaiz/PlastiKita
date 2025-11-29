@@ -85,13 +85,13 @@ export default function ArtikelCarousel(){
     const displayArticles = artikel.slice(startIndex, lastindex);
 
     return(
-        <div className="w-10/12 mx-auto relative z-10">
-            <div className="mb-24 flex flex-row gap-10 justify-center">
+        <div className="w-11/12 lg:w-10/12 mx-auto relative z-10">
+            <div className="mb-24 flex flex-col md:flex-row gap-10 justify-center">
                 {displayArticles.map((item, index) => (
-                <div className="w-3/12 h-[392px]" key={index}>
-                    <div className={`${item.image} bg-cover bg-center w-full h-[174px] rounded-t-[20px]`}></div>
-                    <div className="w-full px-4 py-3 bg-[#C8F29D]">
-                        <h1 className="font-poppins font-[600] text-[#3F3313] text-[16px]">{item.title}</h1>
+                <div className="w-full md:w-4/12 lg:w-3/12 h-[392px]" key={index}>
+                    <div className={`${item.image} bg-cover bg-center w-full h-[144px] lg:h-[174px] rounded-t-[20px]`}></div>
+                    <div className="w-full px-4 py-2 lg:py-3 bg-[#C8F29D]">
+                        <h1 className="font-poppins font-[600] text-[#3F3313] text-[14px] lg:text-[16px]">{item.title}</h1>
                     </div> 
                     <div className="bg-[#F9FFE9] border-2 border-[#C8F29D] py-4 px-2 rounded-b-[20px]">
                         <p className="text-[#3F3313] font-poppins font-[400] text-[12px] mb-7">
@@ -106,7 +106,7 @@ export default function ArtikelCarousel(){
                 </div>
                 ))}
             </div>
-            <div className="flex flex-row justify-between items-center w-5/12 mx-auto">
+            <div className="flex flex-row justify-between items-center w-full md:w-5/12 mx-auto">
                 <button className="rounded-full w-[35px] h-[35px] p-2 bg-[#88A825] active:scale-90 shadow-2xl flex justify-center items-center text-2xl text-white cursor-pointer" onClick={before}>
                     ‹
                 </button>

@@ -5,17 +5,17 @@ import VideoPembelajaran from "../components/VideoPembelajaran";
 
 export default function Artikel() {
     return (
-        <div>
-            <section className="min-h-screen backdrop-brightness-50 text-black pt-32">
+        <div className="text-white">
+            <section className="min-h-screen backdrop-brightness-50 text-black flex flex-col justify-center xl:flex-none">
                 <div className="absolute inset-0 bg-people-collect-trash bg-cover bg-center brightness-50 -z-10"></div>
-                <div className="w-7/12 px-16">
+                <div className="w-11/12 md:w-9/12 lg:w-7/12 px-8 md:px-16">
                     <div className="rounded-full border-[#F5A100] border-2 inline-block px-4 py-1 mb-2">
                         <h1 className="text-[#F5A100] font-medium text-[13px]">Edukasi Lingkungan Polusi Plastik</h1>
                     </div>
-                    <h1 className="font-poppins font-semibold text-[45px] text-white">
+                    <h1 className="font-poppins font-semibold text-[28px] md:text-[45px] text-white">
                         Tingkatkan literasi kamu tentang polusi plastik
                     </h1>
-                    <p className="font-poppins font-semibold text-[20px] text-white w-11/12 mb-5">
+                    <p className="font-poppins font-semibold text-[12px] md:text-[20px] text-white w-full md:w-11/12 mb-5">
                         Eksplorasi jenis polusi plastik, ikuti perkembangan berita
                         terbaru, dan pelajari dampaknya melalui konten edukatif dan video
                         pembelajaran.

@@ -45,10 +45,9 @@ export default function VideoPembelajaran(){
                     </div>
                 )})}
             </div>
-            <div className="w-6/12 bg-white flex justify-center items-center mx-auto py-[46px] rounded-[25px]">
+            <div className="w-11/12 md:w-6/12 bg-white flex justify-center items-center mx-auto py-[46px] rounded-[25px]">
                 <iframe
-                    width="560"
-                    height="315"
+                    className="w-[360px] h-[215px] md:w-[560px] md:h-[315px]"
                     src={`https://www.youtube.com/embed/${video[currentVideo].embed}`}
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

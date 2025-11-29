@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
     { href: "/", label: "Beranda" },
-    { href: "#program", label: "Tentang" },
-    { href: "/eksplorasi-3d", label: "Artikel" },
+    { href: "/tentang", label: "Tentang" },
+    { href: "/artikel", label: "Artikel" },
     { href: "/quiz", label: "Quiz" },
 ];
 
@@ -15,6 +16,7 @@ export default function Navbar() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const mounted = true;
+    const path = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -73,7 +75,7 @@ export default function Navbar() {
                     ))}
                     <Link
                         href="#laporan"
-                        className="rounded-full bg-[#f6a500] px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_16px_38px_rgba(246,165,0,0.4)]"
+                        className={`${path === '/' ? 'block' : 'hidden'} rounded-full bg-[#f6a500] px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_16px_38px_rgba(246,165,0,0.4)]`}
                     >
                         Laporkan
                     </Link>
@@ -98,7 +100,7 @@ export default function Navbar() {
                     <Link
                         href="#laporan"
                         onClick={() => setIsMobileOpen(false)}
-                        className="rounded-full bg-[#f6a500] px-4 py-2 text-center text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_14px_34px_rgba(246,165,0,0.4)]"
+                        className={`${path === '/' ? 'block' : 'hidden'} rounded-full bg-[#f6a500] px-4 py-2 text-center text-white shadow-[0_12px_30px_rgba(246,165,0,0.35)] transition hover:translate-y-[-1px] hover:shadow-[0_14px_34px_rgba(246,165,0,0.4)]`}
                     >
                         Laporkan
                     </Link>
