@@ -35,6 +35,11 @@ export const metadata: Metadata = {
   description:
     "Platform edukasi plastik, pemetaan data, dan laboratorium material berbasis teknologi 3D untuk ekonomi sirkular Indonesia.",
   metadataBase: new URL("https://plastikita.example"),
+  icons: {
+    icon: "/img/logo.png",
+    shortcut: "/img/logo.png",
+    apple: "/img/logo.png",
+  },
   openGraph: {
     title: "PlastiKita",
     description:

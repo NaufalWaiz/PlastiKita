@@ -7,7 +7,6 @@ interface PollutionType {
   title: string
   description: string
   icon: string
-  buttonText: string
 }
 
 const pollutionData: PollutionType[] = [
@@ -16,28 +15,24 @@ const pollutionData: PollutionType[] = [
     title: 'Microplastics',
     description: 'Microplastic adalah partikel plastik berukuran sangat kecil (kurang dari 5 mm) yang berasal dari pecahan plastik yang lebih besar atau produk yang sengaja dibuat kecil. Ini dapat ditemukan di air, tanah, udara, hingga rantai makanan manusia, sehingga berpotensi membahayakan kesehatan dan ekosistem.',
     icon: 'icon-microplastic',
-    buttonText: 'Jelajahi'
   },
   {
     id: 2,
     title: 'Macroplastics',
     description: 'Macroplastic adalah plastik berukuran besar (lebih dari 5 mm), seperti botol, kantong plastik, dan kemasan makanan. Limbah ini mudah terlihat dan sering mencemari laut maupun daratan. Jika dibiarkan, macroplastic dapat terurai menjadi microplastic yang lebih berbahaya bagi lingkungan.',
     icon: 'icon-macroplastic',
-    buttonText: 'Jelajahi'
   },
   {
     id: 3,
     title: 'Jaring Laut',
     description: 'Limbah jaring laut adalah jaring penangkapan ikan yang hilang atau dibuang di laut dan tetap menjebak hewan laut secara tidak sengaja. Limbah ini dapat menyebabkan kematian penyu, ikan, dan mamalia laut, serta merusak terumbu karang karena terus melayang dan menjerat biota laut selama bertahun-tahun.',
     icon: 'icon-net',
-    buttonText: 'Jelajahi'
   },
   {
     id: 4,
     title: 'Bungkus Snack',
     description: 'Seringkali orang-orang membuang bungkus snack yang terkesan remeh ini sembarangan. Padahal jika dikumpulkan secara terus-menerus sampah ini menjadi salah satu polusi plastik yang cukup mengkhawatirkan.',
     icon: 'icon-bungkus-snack',
-    buttonText: 'Jelajahi'
   },
 ]
 
@@ -112,12 +107,6 @@ export default function PolusiPlastikCarousel() {
           </button>
         </div>
 
-        {/* Explore Button */}
-        <div className="flex justify-center mt-8 mb-12">
-          <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition-colors">
-            {pollutionData[currentIndex].buttonText}
-          </button>
-        </div>
 
         {/* Content Card */}
         <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 shadow-xl">
