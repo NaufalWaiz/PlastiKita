@@ -8,6 +8,11 @@ Plastikita merupakan website yang di gunakan untuk mengikuti lomba Technoversary
 - Leonardo Alfareno (Frontend Developer)
 - Revani Khoirunnisa Azahra (UI/UX, 3D Artist)
 
+## Requirement
+```bash
+  npm package manager
+```
+
 ## Cara Menjalankan Websitenya
 ```bash
   npm install
